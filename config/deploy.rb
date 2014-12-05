@@ -5,7 +5,7 @@ lock '3.2.1'
 
 set :application, 'my-app'
 set :repo_url, 'https://github.com/tmiyamon/my-app.git'
-set :deploy_to, '/home/tmiyamon/production.tmiyamon.koding.io/current'
+set :deploy_to, '/home/tmiyamon/production.tmiyamon.koding.io/'
 set :keep_releases, 5
 
 set :rvm_type, :system
