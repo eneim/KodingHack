@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :donations
+
+  resources :disasters
+
   root 'main#index'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @disaster.title
+p
+  strong Desc:
+  = @disaster.desc
+p
+  strong Original:
+  = @disaster.original_id
+
+= link_to 'Edit', edit_disaster_path(@disaster)
+'|
+= link_to 'Back', disasters_path

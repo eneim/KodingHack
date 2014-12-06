@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206130617) do
+ActiveRecord::Schema.define(version: 20141206170147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,28 @@ ActiveRecord::Schema.define(version: 20141206130617) do
     t.float  "latitude"
     t.float  "longitude"
     t.string "name"
+    t.string "country"
   end
+
+  create_table "disasters", force: true do |t|
+    t.string   "title"
+    t.string   "desc"
+    t.string   "original_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "donations", force: true do |t|
+    t.integer  "amount"
+    t.string   "country"
+    t.integer  "user_id"
+    t.integer  "disaster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "donations", ["disaster_id"], name: "index_donations_on_disaster_id", using: :btree
+  add_index "donations", ["user_id"], name: "index_donations_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

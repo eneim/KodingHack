@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :city
+  has_many :donations
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
  # devise :database_authenticatable, :registerable,
@@ -30,11 +31,12 @@ class User < ActiveRecord::Base
   def self.find_or_create_city_from(city_id, token)
     City.find_or_create_by(original_id: city_id) do |city|
       graph = Koala::Facebook::API.new(token)
-      city_object = graph.get_object(city_id)
+      city_object = graph.get_object(city_id, locale: 'en_US')
 
       city.latitude = city_object['location']['latitude']
       city.longitude = city_object['location']['longitude']
       city.name = city_object['name']
+      city.country = city_object['name'].split(',').last.strip()
     end
   end
 end
