@@ -11,7 +11,6 @@ $(document).ready(function(){/* off-canvas sidebar toggle */
     });
 });
 
-
 $('#hi > li').click(function() {
     var $that = $(this);
     $that.siblings().removeClass('active')
