@@ -1,1 +1,39 @@
 h2 Main
+
+#user-info.panel.panel-default
+  .panel-heading user information
+  .panel-body
+    pre
+
+#ranking-info.panel.panel-default
+  .panel-heading ranking information for disaster[12345]
+  .panel-body
+    pre
+
+
+button#donate donate
+
+javascript:
+  $.getJSON('/user', function(json) {
+    $('#user-info .panel-body pre').text(JSON.stringify(json, null, "    "))
+  });
+
+  $.getJSON('/disasters/12345/ranking', function(json) {
+    $('#ranking-info .panel-body pre').text(JSON.stringify(json, null, "    "))
+  });
+
+  $('#donate').on('click', function() {
+    var $that = $(this);
+    $.post('/donations', {
+      disaster: {
+        original_id: '12345',
+        title: 'title for disaster',
+        desc: 'desc for disaster'
+      },
+      amount: 1000000
+    }, function(ret) {
+      $.getJSON('/disasters/12345/ranking', function(json) {
+        $('#ranking-info .panel-body pre').text(JSON.stringify(json, null, "    "))
+      });
+    });
+  });
