@@ -10,3 +10,15 @@ $('[data-toggle=offcanvas]').click(function() {
     $('#btnShow').toggle();
 });
 });
+
+
+
+$(function() {
+                $('#hi li a').click( function() {
+                	var $this = $(this);
+                  $this.siblings().removeClass('active');
+				  if (!$this.hasClass('active')) {
+				      $this.addClass('active');
+				  }
+                });
+              });

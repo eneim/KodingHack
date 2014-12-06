@@ -22,6 +22,10 @@ hr {
   border-color:#dedede;
 }
 
+li .active {
+  CHERRY
+}
+
 .wrapper, .row {
    height: 100%;
    margin-left:0;
@@ -91,6 +95,16 @@ hr {
 .navbar-blue li>a:hover, .navbar-blue li>a:focus, .navbar-blue .open, .navbar-blue .open>a, .navbar-blue .open>a:hover, .navbar-blue .open>a:focus {
    background-color:#2A4888;
    color:#fff;
+}
+
+/*.active
+{
+    background-color:#2A4888;
+   color:#fff;
+}*/
+
+.unactive {
+  background-color:#fff;
 }
 
 #main {
