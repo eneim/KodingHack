@@ -18,7 +18,7 @@ gem 'foreman'
 gem 'slim-rails'
 gem 'kaminari'
 
-gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 gem 'devise'
 
 gem 'bootstrap-sass'
