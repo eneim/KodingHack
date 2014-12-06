@@ -18,6 +18,7 @@ gem 'foreman'
 gem 'slim-rails'
 gem 'kaminari'
 
+gem 'koala'
 gem 'omniauth-facebook'
 gem 'devise'
 

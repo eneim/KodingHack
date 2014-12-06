@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  belongs_to :city
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
  # devise :database_authenticatable, :registerable,
@@ -14,11 +15,26 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
+    token = auth.credentials.token
+    city_id = auth.extra.raw_info.location.id
+
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       #user.email = auth.info.email
       #user.password = Devise.friendly_token[0,20]
-      #user.name = auth.info.name   # assuming the user model has a name
-      #user.image = auth.info.image # assuming the user model has an image
+      user.name = auth.info.name   # assuming the user model has a name
+      user.image = auth.info.image # assuming the user model has an image
+      user.city = find_or_create_city_from(city_id, token)
+    end
+  end
+
+  def self.find_or_create_city_from(city_id, token)
+    City.find_or_create_by(original_id: city_id) do |city|
+      graph = Koala::Facebook::API.new(token)
+      city_object = graph.get_object(city_id)
+
+      city.latitude = city_object['location']['latitude']
+      city.longitude = city_object['location']['longitude']
+      city.name = city_object['name']
     end
   end
 end
