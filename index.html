@@ -1,22 +1,49 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Donathon</title>
+	<meta charset="utf-8">
+	<title>Donathon</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="js/cooker.drawer.js"></script>
+	<script src="css/cooker.drawer.css"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	  $('.drawer').drawer({
+	    desktopEvent:'click'
+	  });
+	});
+	</script>
+	<link href="css/cooker.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script>
+	  	window.fbAsyncInit = function() 
+	  	{
+		    FB.init({
+		      appId      : '309594252578879',
+		      xfbml      : true,
+		      version    : 'v2.2'
+		    });
+		    FB.getLoginStatus(function(response) {
+		  		if (response.status === 'connected') {
+		    		alert("Logged in");
+		  		}
+		  		else {
+		  			alert("Not yet Logged in");
+		    		FB.login();
+		  		}
+			});
+		};
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<script src="js/cooker.drawer.js"></script>
-<script src="css/cooker.drawer.css"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-  $('.drawer').drawer({
-    desktopEvent:'click'
-  });
-});
-</script>
-<link href="css/cooker.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	  	(function(d, s, id)
+	  	{
+		    var js, fjs = d.getElementsByTagName(s)[0];
+		    if (d.getElementById(id)) {return;}
+		    js = d.createElement(s); js.id = id;
+		    js.src = "//connect.facebook.net/en_US/sdk.js";
+		    fjs.parentNode.insertBefore(js, fjs);
+	   	} (document, 'script', 'facebook-jssdk'));
+	</script>
 </head>
 
 <body>
@@ -25,12 +52,12 @@ $(document).ready(function() {
 <nav class="drawer-nav" role="navigation">
 <div class="drawer-brand"><a href="./">jQuery Drawer</a> </div>
 <ul class="nav drawer-nav-list">
-<li><a href="http://www.jqueryscript.net/">Home</a></li>
-<li><a href="http://www.jqueryscript.net/jquery-plugins/">Latest jQuery Plugins</a></li>
-<li><a href="http://www.jqueryscript.net/popular/">Most Popular Plugins</a></li>
-<li><a href="http://www.jqueryscript.net/recommended/">Recommended Plugins</a></li>
-<li><a href="http://www.jqueryscript.net/blog/">Blog</a></li>
-<li><a href="http://www.jqueryscript.net/submit/" rel="nofollow">Submit Plugins &amp; News</a></li>
+<li><a href="http://www.jqueryscript.net/">1. North Korea</a></li>
+<li><a href="http://www.jqueryscript.net/jquery-plugins/">2. America</a></li>
+<li><a href="http://www.jqueryscript.net/popular/">3. Country</a></li>
+<li><a href="http://www.jqueryscript.net/recommended/">4. ASDASDASD</a></li>
+<li><a href="http://www.jqueryscript.net/blog/">5. SFSFADF</a></li>
+<li><a href="http://www.jqueryscript.net/submit/" rel="nofollow">6. LOL</a></li>
 </ul>
 </nav>
 </div>
