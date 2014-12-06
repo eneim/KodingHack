@@ -22,10 +22,6 @@ hr {
   border-color:#dedede;
 }
 
-li .active {
-  CHERRY
-}
-
 .wrapper, .row {
    height: 100%;
    margin-left:0;
@@ -97,15 +93,20 @@ li .active {
    color:#fff;
 }
 
+#hi > li.active {
+   background-color:#2A4888;
+   color:#fff;
+}
+
 /*.active
 {
     background-color:#2A4888;
    color:#fff;
-}*/
+}
 
 .unactive {
-  background-color:#fff;
-}
+  background-color:#2A4888;
+}*/
 
 #main {
    background-color:#e9eaed;
@@ -262,10 +263,8 @@ small.text-muted {
   }
 
   .navbar-blue {
-	background-color:#FFF;
-    top:0;
+	  top:0;
     width:100%;
-    position:relative;
   }
 
 }

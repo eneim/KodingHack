@@ -13,12 +13,8 @@ $('[data-toggle=offcanvas]').click(function() {
 
 
 
-$(function() {
-                $('#hi li a').click( function() {
-                	var $this = $(this);
-                  $this.siblings().removeClass('active');
-				  if (!$this.hasClass('active')) {
-				      $this.addClass('active');
-				  }
-                });
-              });
+$('#hi > li').click(function() {
+    var $that = $(this);
+    $that.siblings().removeClass('active')
+    $that.addClass('active');
+})
