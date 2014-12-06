@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :sign_out
   end
 
+  get 'user' => "user#index"
   resources :donations
   resources :disasters do
     member do
