@@ -1,7 +1,7 @@
 class DisastersController < ApplicationController
   before_action :set_disaster, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :json
 
   def index
     @disasters = Disaster.all
@@ -34,6 +34,10 @@ class DisastersController < ApplicationController
   def destroy
     @disaster.destroy
     respond_with(@disaster)
+  end
+
+  def ranking
+    render json: Disaster.ranking_for(params[:id])
   end
 
   private
