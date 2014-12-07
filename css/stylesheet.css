@@ -94,4 +94,5 @@ body {
     background-image: url("http://djchuhan.com/wp-content/uploads/2012/06/hand-in-heart-2-1600x1142.jpg");
     background-repeat: no-repeat;
     background-position: center center;
+    background-attachment: fixed;
 }

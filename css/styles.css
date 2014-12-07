@@ -154,7 +154,7 @@ hr {
 }
 
 #sidebar-footer {
-  background-color:#444;
+  background-color:#009688;
   position:fixed;
   width:100%;
   bottom:0px;
@@ -185,6 +185,7 @@ h1,h2,h3 {
 }
 .btn-default {
     color:#666666;
+    background-color:#009688;
     text-shadow:0 0 1px rgba(0,0,0,.3);
 }
 .form-control {
