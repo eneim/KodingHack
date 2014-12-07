@@ -10,8 +10,7 @@ h2 Main
   .panel-body
     pre
 
-
-button#donate donate
+button#donate data-original_id=1044579 donate
 
 javascript:
   $.getJSON('/user', function(json) {
@@ -24,15 +23,17 @@ javascript:
 
   $('#donate').on('click', function() {
     var $that = $(this);
+    var original_id = $that.data('original_id')
+
     $.post('/donations', {
       disaster: {
-        original_id: '12345',
+        original_id: original_id,
         title: 'title for disaster',
         desc: 'desc for disaster'
       },
       amount: 1000000
     }, function(ret) {
-      $.getJSON('/disasters/12345/ranking', function(json) {
+      $.getJSON('/disasters/' + original_id + '/ranking', function(json) {
         $('#ranking-info .panel-body pre').text(JSON.stringify(json, null, "    "))
       });
     });

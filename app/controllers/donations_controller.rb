@@ -8,7 +8,7 @@ class DonationsController < ApplicationController
         user: current_user,
         disaster: disaster,
         amount: params[:amount],
-        country: current_user.city.country
+        country: (current_user.city.country rescue '')
       )
       @donation.save
 

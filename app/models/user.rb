@@ -19,14 +19,14 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
     token = auth.credentials.token
-    city_id = auth.extra.raw_info.location.id
+    city_id = auth.extra.raw_info.location.id rescue nil
 
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      #user.email = auth.info.email
+      user.email = "#{auth.uid}@test.com"
       #user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
       user.image = auth.info.image # assuming the user model has an image
-      user.city = find_or_create_city_from(city_id, token)
+      user.city = find_or_create_city_from(city_id, token) if city_id.present?
     end
   end
 

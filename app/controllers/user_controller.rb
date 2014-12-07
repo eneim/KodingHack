@@ -3,7 +3,7 @@ class UserController < ApplicationController
 
   def index
     user_json = current_user.attributes.slice("image", "name")
-    user_json['city'] = current_user.city.attributes.slice("original_id", "latitude", "longitude", "name", "country")
+    user_json['city'] = current_user.city.attributes.slice("original_id", "latitude", "longitude", "name", "country") rescue {}
 
     render json: user_json
   end
