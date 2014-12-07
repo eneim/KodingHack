@@ -61,11 +61,10 @@ function getData() {
               height: 32,
               title: item.dc_description,
               xcolor: markerColor,
-              xtype: 'marker'
+              xtype: 'marker',
+              data: item
           });
-
       });
-
       map.validateData();
   });
 };

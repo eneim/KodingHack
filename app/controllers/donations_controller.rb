@@ -11,11 +11,9 @@ class DonationsController < ApplicationController
         country: (current_user.city.country rescue '')
       )
       @donation.save
-
-      render json: @donation.attributes.slice('amount', 'country')
-    else
-      render json: { msg: "Not found disaster for original_id: #{create_params[:original_id]}" }, status: 404
     end
+
+    redirect_to :root
   end
 
   def user_ranking

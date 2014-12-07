@@ -69,8 +69,15 @@ var map = AmCharts.makeChart("mapdiv", {
 
 map.addListener("clickMapObject", function (event) {
     // check if the map is already at traget zoomLevel and go to url if it is
-    if (event.mapObject.xtype == 'marker')
-        $('#donateDialog').modal('show');
+    if (event.mapObject.xtype == 'marker') {
+      console.log(event.mapObject.data)
+      $('#donation-modal-label').text(
+        "New Donation for " + event.mapObject.data.dc_title
+      );
+      $('#donateDialog')
+        .data('data', event.mapObject.data)
+        .modal('show')
+    }
 });
 
 // add events to recalculate map position when the map is moved or zoomed

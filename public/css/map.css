@@ -1,13 +1,3 @@
-#mapdiv {
-    background: #f5fbfe;
-    font-size : 11px;
-    position: relative;
-    width   : 100%;
-    height    : 100%;
-    top:50px;
-
-}
-
 .map-marker {
     /* adjusting for the marker dimensions
     so that it is centered on coordinates */
