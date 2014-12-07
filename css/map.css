@@ -1,19 +1,20 @@
 #mapdiv {
-        background: #ffffcc;
-        font-size : 11px;
-        position: relative;
-        width   : 100%;
-        height    : 100%;
-        top:50px;
-        
-      }
-      
+    background: #A5D6A7;
+    font-size : 11px;
+    position: relative;
+    width   : 100%;
+    height    : 100%;
+    top:50px;
+
+}
+
 .map-marker {
-    /* adjusting for the marker dimensions 
+    /* adjusting for the marker dimensions
     so that it is centered on coordinates */
     margin-left: -8px;
     margin-top: -8px;
 }
+
 .pulse {
     width: 10px;
     height: 10px;
@@ -22,9 +23,10 @@
     -moz-border-radius: 30px;
     border-radius: 30px;
     background-color: #716f42;
-    z-index: 10;
+    z-index: 2;
     position: absolute;
-  }
+}
+
 .map-marker .dot {
     border: 10px solid #fff601;
     background: transparent;
@@ -33,59 +35,61 @@
     border-radius: 60px;
     height: 50px;
     width: 50px;
-    -webkit-animation: pulse 3s ease-out;
-    -moz-animation: pulse 3s ease-out;
-    animation: pulse 3s ease-out;
+    -webkit-animation: pulse 2s ease-out;
+    -moz-animation: pulse 2s ease-out;
+    animation: pulse 2s ease-out;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     position: absolute;
-    top: -25px;
-    left: -25px;
+    top: -16px;
+    left: -16px;
     z-index: 1;
     opacity: 0;
-  }
-  @-moz-keyframes pulse {
-   0% {
-      -moz-transform: scale(0);
-      opacity: 0.0;
-   }
-   25% {
-      -moz-transform: scale(0);
-      opacity: 0.1;
-   }
-   50% {
-      -moz-transform: scale(0.1);
-      opacity: 0.3;
-   }
-   75% {
-      -moz-transform: scale(0.5);
-      opacity: 0.5;
-   }
-   100% {
-      -moz-transform: scale(1);
-      opacity: 0.0;
-   }
-  }
-  @-webkit-keyframes "pulse" {
-   0% {
-      -webkit-transform: scale(0);
-      opacity: 0.0;
-   }
-   25% {
-      -webkit-transform: scale(0);
-      opacity: 0.1;
-   }
-   50% {
-      -webkit-transform: scale(0.1);
-      opacity: 0.3;
-   }
-   75% {
-      -webkit-transform: scale(0.5);
-      opacity: 0.5;
-   }
-   100% {
-      -webkit-transform: scale(1);
-      opacity: 0.0;
-   }
-  }
+}
+
+@-moz-keyframes pulse {
+    0% {
+        -moz-transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        -moz-transform: scale(0);
+        opacity: 0.15;
+    }
+    50% {
+        -moz-transform: scale(0.1);
+        opacity: 0.45;
+    }
+    75% {
+        -moz-transform: scale(0.5);
+        opacity: 0.75;
+    }
+    100% {
+        -moz-transform: scale(1);
+        opacity: 0.0;
+    }
+}
+
+@-webkit-keyframes "pulse" {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        -webkit-transform: scale(0);
+        opacity: 0.15;
+    }
+    50% {
+        -webkit-transform: scale(0.1);
+        opacity: 0.35;
+    }
+    75% {
+        -webkit-transform: scale(0.5);
+        opacity: 0.75;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 0.0;
+    }
+}
