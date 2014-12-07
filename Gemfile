@@ -21,6 +21,7 @@ gem 'kaminari'
 gem 'koala'
 gem 'omniauth-facebook'
 gem 'devise'
+gem 'rest-client'
 
 gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
@@ -70,7 +71,7 @@ group :test do
 end
 
 # related deploy
-#gem 'whenever', require: false
+gem 'whenever', require: false
 
 group :deployment do
   gem 'capistrano', '~> 3.2.1'

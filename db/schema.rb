@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207051247) do
+ActiveRecord::Schema.define(version: 20141207060443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,15 +25,10 @@ ActiveRecord::Schema.define(version: 20141207051247) do
   end
 
   create_table "disasters", force: true do |t|
-    t.string   "title"
-    t.string   "desc"
     t.string   "original_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "subject"
-    t.string   "alert_level"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.json     "raw"
   end
 
   create_table "donations", force: true do |t|
