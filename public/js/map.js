@@ -83,8 +83,6 @@ function updateCustomMarkers(event) {
 
     // go through all of the images
     for (var x in map.dataProvider.images) {
-        console.log(x);
-        // get MapImage object
         var image = map.dataProvider.images[x];
 
         // check if it has corresponding HTML element

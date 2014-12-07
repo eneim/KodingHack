@@ -12,25 +12,10 @@
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-		<link rel="stylesheet" type="text/css" href="css/user.css">
-
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<link rel="stylesheet" href="css/user.css">
     <link rel="stylesheet" href="css/map.css">
-
-    	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="js/fb_login.js"></script>
-    	<script type="text/javascript" src="http://www.amcharts.com/lib/3/ammap.js"></script>
-    	<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/continentsLow.js"></script>
-    	<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-		<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
-
-    	<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
-    	<script type="text/javascript" src="js/map.js"></script>
-
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css" >
 	</head>
 	<body>
 
@@ -121,32 +106,6 @@
     </div>
 </div>
 
-<script type="text/javascript">
-$.getJSON('/donations/user_ranking', function(json) {
-  $.each(json, function(i, data) {
-    fillSideBar(data.amount, data.image, data.name);
-  });
-})
-
-  function fillSideBar(amount, image, name){
-    $("#lg-menu").append(
-      "<li><a href='http://ene.im'><img src='"+image+"' />"+name+"<p> has donated "+amount+"USD</p></a></li>"
-    )
-  }
-
-  function mapResize(){
-    $("#mapdiv").css("height",function(){
-      return $(window).height() - $("#navBar").height();
-    })
-  }
-
-  mapResize()
-  $(window).resize(function(){
-    mapResize();
-  });
-
-</script>
-
 <div class="modal fade" id="donateDialog" tabindex="-1" role="dialog" aria-labelledby="Donathon" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -175,8 +134,37 @@ $.getJSON('/donations/user_ranking', function(json) {
 
 	<!-- script references -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/ammap.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/continentsLow.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/scripts.js"></script>
-  	<script src="js/searchButtonOnClick.js"></script>
+  <script src="js/searchButtonOnClick.js"></script>
+  <script type="text/javascript">
+    $.getJSON('/donations/user_ranking', function(json) {
+      $.each(json, function(i, data) {
+        fillSideBar(data.amount, data.image, data.name);
+      });
+    })
+
+    function fillSideBar(amount, image, name){
+      $("#lg-menu").append(
+        "<li><a href='http://ene.im'><img src='"+image+"' />"+name+"<p> has donated "+amount+"USD</p></a></li>"
+      )
+    }
+
+    function mapResize(){
+      $("#mapdiv").css("height",function(){
+        return $(window).height() - $("#navBar").height();
+      })
+    }
+
+    mapResize()
+    $(window).resize(mapResize);
+  </script>
+
 </body>
 </html>
