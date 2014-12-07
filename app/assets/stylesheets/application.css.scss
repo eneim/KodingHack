@@ -8,6 +8,12 @@ $color-facebook-hover: #8b9dc3;
   pre {
     text-align: left;
   }
+
+  #hi {
+    li > a {
+      color: black;
+    }
+  }
 }
 
 .btn-facebook {

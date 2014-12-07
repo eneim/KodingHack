@@ -1,3 +1,8 @@
+<% content_for :post_css_include do %>
+  <link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<% end %>
+
 <div class="signin-page">
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
@@ -7,7 +12,7 @@
             <h3 class="masthead-brand">Donathon</h3>
             <nav>
               <ul class="nav masthead-nav">
-                <li class="active"><%= link_to 'Login', user_omniauth_authorize_path(:facebook) %></li>
+               <li class="active"><%= link_to 'Login', user_omniauth_authorize_path(:facebook) %></li>
                 <li><a href="faq.html">FAQ</a></li>
               </ul>
             </nav>

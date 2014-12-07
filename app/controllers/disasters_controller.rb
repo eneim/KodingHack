@@ -1,6 +1,6 @@
 class DisastersController < ApplicationController
 def index
-    render json: Disaster.page(1).per_page(50)
+    render json: Disaster.page(1).per(50)
   end
 
   def ranking

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Donathon - Become Charitable with this App.</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" >
+
+		<script type="text/javascript" src="js/fb_login.js"></script>
+		<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="css/user.css">
+
+    <link rel="stylesheet" href="css/map.css">
+
+    	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/fb_login.js"></script>
+    	<script type="text/javascript" src="http://www.amcharts.com/lib/3/ammap.js"></script>
+    	<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/continentsLow.js"></script>
+    	<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+		<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
+
+    	<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+    	<script type="text/javascript" src="js/map.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+
+
+<div class="wrapper">
+  <div class="box">
+    <div class="row row-offcanvas row-offcanvas-left">
+<!-- sidebar -->
+      <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar" style="position:fixed; right:0">
+
+        <ul class="nav">
+          <li>
+            <a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a>
+          </li>
+        </ul>
+
+		<div class="user_rank_list">
+			<ul id="lg-menu"></ul>
+		</div>
+
+        <div class="list-unstyled hidden-xs" id="sidebar-footer">
+          	<a href="">Made By: Gundam Team</a>
+        </div>
+
+              	<!-- tiny only nav-->
+        <ul class="nav visible-xs" id="xs-menu">
+        	<li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+          <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
+        	<li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+          <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
+        </ul>
+
+            </div>
+            <!-- /sidebar -->
+
+     	       <!-- main left col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+
+                <!-- top nav -->
+              	<div class="navbar navbar-blue navbar-static-top">
+                    <div class="navbar-header">
+                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+                      </button>
+                  	</div>
+                  	<nav class="collapse navbar-collapse" id="navBar" role="navigation">
+                    <a href="/" class="navbar-brand logo"><img style="padding-bottom: 8px;" src="images/logo_donation.png" width="140" height="33"></a>
+                    <form class="navbar-form navbar-left" style="padding-top: 3px;">
+                        <div class="input-group input-group-sm" style="max-width:200px; margin-left: 140px;">
+                          <input type="text" class="form-control" placeholder="Search for Disaster" name="srch-term" id="srch-term">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" onclick="searchButtonOnClick()">Search</button>
+                          </div>
+                        </div>
+                    </form>
+                    <ul id="hi" class="nav navbar-nav">
+                      <li>
+                        <a href="#" style="color:black"><img src="images/icon_earthquake.png" width="20" height="20"> Earthquake</a>
+                      </li>
+                      <li class="blah">
+                        <a href="#" style="color:black"><img src="images/icon_flood.png" width="20" height="20"> Flood</a>
+                      </li>
+                      <li class="blah">
+                        <a href="#" style="color:black"><img src="images/icon_typhoon.png" width="20" height="20"> Typhoon</a>
+                      </li>
+                      <li class="blah">
+                        <a href="#" style="color:black"><img src="images/icon_volcano.png" width="20" height="20"> Volcano</a>
+                      </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" style="color:red">
+                      <li>
+                        <!--a href="#postModal" role="button" data-toggle="modal" style="color:black"> Sign Up</a-->
+                        <a href="#postModal" role="button" data-toggle="modal" style="color:black"> Sign Up</a>
+                      </li>
+                      <li>
+                        <a href="faq.html" role="button" style="color:black"> FAQ</a>
+                      </li>
+                    </ul>
+                  	</nav>
+                </div>
+                <!-- /top nav -->
+                <!-- <div width="20" height="20"> -->
+                  <div id="mapdiv">
+                  </div>
+              <!-- </div> -->
+                <!-- <div class="padding" style="padding-top:70px;"> -->
+<!--
+                    <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-scope="email" onlogin="CrunchTime.auth.fb();">Login via Facebook</div>
+                     -->
+                </div><!-- /padding -->
+            </div>
+            <!-- /main -->
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  function fillSideBar(name){
+
+    $("#lg-menu").append(
+		"<li><a href='http://ene.im'><img src='https://cdnil0.fiverrcdn.com/deliveries/458463/large/create-cartoon-caricatures_ws_1364550258.png?1364550258' />Nam Nguyen<p>Nam has donated 1000USD</p></a></li>"
+	)
+  }
+
+  for(var i=0; i<15;i++){
+    fillSideBar("");
+  }
+
+  function mapResize(){
+    $("#mapdiv").css("height",function(){
+      return $(window).height() - $("#navBar").height();
+    })
+  }
+
+  mapResize()
+  $(window).resize(function(){
+    mapResize();
+  });
+
+</script>
+
+<div class="modal fade" id="donateDialog" tabindex="-1" role="dialog" aria-labelledby="Donathon" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">New Donation</h4>
+			</div>
+			<div class="modal-body">
+				<form role="form">
+					<div class="form-group">
+						<label for="recipient-name" class="control-label">Recipient:</label>
+						<input type="text" class="form-control" id="recipient-name">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="control-label">Message:</label>
+						<textarea class="form-control" id="message-text"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!-- script references -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+  	<script src="js/searchButtonOnClick.js"></script>
+</body>
+</html>
