@@ -133,15 +133,16 @@
 </div>
 
 <script type="text/javascript">
-  function fillSideBar(name){
+$.getJSON('/donations/user_ranking', function(json) {
+  $.each(json, function(i, data) {
+    fillSideBar(data.amount, data.image, data.name);
+  });
+})
 
+  function fillSideBar(amount, image, name){
     $("#lg-menu").append(
-		"<li><a href='http://ene.im'><img src='https://cdnil0.fiverrcdn.com/deliveries/458463/large/create-cartoon-caricatures_ws_1364550258.png?1364550258' />Nam Nguyen<p>Nam has donated 1000USD</p></a></li>"
-	)
-  }
-
-  for(var i=0; i<15;i++){
-    fillSideBar("");
+      "<li><a href='http://ene.im'><img src='"+image+"' />"+name+"<p> has donated "+amount+"USD</p></a></li>"
+    )
   }
 
   function mapResize(){
