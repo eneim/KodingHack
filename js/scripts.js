@@ -65,10 +65,12 @@ $('#hi > li').click(function() {
                             latitude: item.foaf_based_near[1],
                             longitude: item.foaf_based_near[0],
                             imageURL: imageURL,
+                            selectable: true,
                             width: 32,
                             height: 32,
                             title: item.dc_description,
-                            xcolor: markerColor
+                            xcolor: markerColor,
+                            xtype: 'marker'
                         });
 
                     });
