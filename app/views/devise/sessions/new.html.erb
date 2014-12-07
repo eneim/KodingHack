@@ -1,39 +1,80 @@
-<% content_for :post_css_include do %>
-  <link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-<% end %>
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/cover/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<div class="signin-page">
-  <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-      <div class="cover-container">
-        <div class="masthead clearfix">
-          <div class="inner">
-            <h3 class="masthead-brand">Donathon</h3>
-            <nav>
-              <ul class="nav masthead-nav">
-               <li class="active"><%= link_to 'Login', user_omniauth_authorize_path(:facebook) %></li>
-                <li><a href="faq.html">FAQ</a></li>
-              </ul>
-            </nav>
+    <title>Donathon - Become Charitable with this App.</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./cover_files/ie-emulation-modes-warning.js"></script><style type="text/css"></style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Donathon</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Login</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
 
-        <div class="inner cover">
-          <h1 class="cover-heading">Donathon</h1>
-          <p class="lead">A place where everyone can be more charitable, and help places where natural disasters occurred from your city.</p>
-
-          <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-facebook" do %>
-            <i class="fa fa-facebook"></i>Join Donathon with <strong>Facebook</strong>
-          <% end %>
-        </div>
-
-        <div class="mastfoot">
-          <div class="inner">
-            <p>Made by <a href="https://github.com/koding/global.hackathon/blob/master/Teams/Gundam/ABOUT.md">Team Gundam</a>.</p>
+          <div class="inner cover">
+            <h1 class="cover-heading">Donathon</h1>
+            <p class="lead">A place where everyone can be more charitable, and help places where natural disasters occurred from your city.</p>
+            <a href="/users/auth/facebook" class="btn btn-lg btn-default">Join Donathon with <strong>Facebook</strong></a>
           </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Made by <a href="https://github.com/koding/global.hackathon/blob/master/Teams/Gundam/ABOUT.md">Team Gundam</a>.</p>
+            </div>
+          </div>
+
         </div>
+
       </div>
+
     </div>
-  </div>
-</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./cover_files/jquery.min.js"></script>
+    <script src="./cover_files/bootstrap.min.js"></script>
+    <script src="./cover_files/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./cover_files/ie10-viewport-bug-workaround.js"></script>
+
+
+    </body>
+</html>
