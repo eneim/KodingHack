@@ -16,8 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="css/user.css">
 
-    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    	<link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/map.css">
 
     	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="js/fb_login.js"></script>
@@ -54,7 +53,7 @@
 		</div>
 
         <div class="list-unstyled hidden-xs" id="sidebar-footer">
-          	<a href="">Created By Gundam Team</a>
+          	<a href="">Made By: Gundam Team</a>
         </div>
 
               	<!-- tiny only nav-->
@@ -68,7 +67,7 @@
             </div>
             <!-- /sidebar -->
 
-     	       <!-- main right col -->
+     	       <!-- main left col -->
             <div class="column col-sm-10 col-xs-11" id="main">
 
                 <!-- top nav -->
@@ -82,11 +81,12 @@
                       </button>
                   	</div>
                   	<nav class="collapse navbar-collapse" id="navBar" role="navigation">
-                    <form class="navbar-form navbar-left">
-                        <div class="input-group input-group-sm" style="max-width:360px;">
-                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                    <a href="/" class="navbar-brand logo"><img style="padding-bottom: 8px;" src="images/logo_donation.png" width="140" height="33"></a>
+                    <form class="navbar-form navbar-left" style="padding-top: 3px;">
+                        <div class="input-group input-group-sm" style="max-width:200px; margin-left: 140px;">
+                          <input type="text" class="form-control" placeholder="Search for Disaster" name="srch-term" id="srch-term">
                           <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="fa-search"></i></button>
+                            <button class="btn btn-default" type="submit" onclick="searchButtonOnClick()">Search</button>
                           </div>
                         </div>
                     </form>
@@ -104,10 +104,12 @@
                         <a href="#" style="color:black"><img src="images/icon_volcano.png" width="20" height="20"> Volcano</a>
                       </li>
                     </ul>
-                    <a href="/" class="navbar-brand logo"><img src="images/logo_donation.png" width='140' height='33'></a>
                     <ul class="nav navbar-nav navbar-right" style="color:red">
                       <li>
                         <a href="#postModal" role="button" data-toggle="modal" style="color:black"> Sign Up</a>
+                      </li>
+                      <li>
+                        <a href="faq.html" role="button" style="color:black"> FAQ</a>
                       </li>
                     </ul>
                   	</nav>
@@ -180,10 +182,10 @@
 	</div>
 </div>
 
-<!-- script references -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scripts.js"></script>
-
+	<!-- script references -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+  	<script src="js/searchButtonOnClick.js"></script>
 </body>
 </html>
