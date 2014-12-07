@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   end
 
   get 'user' => "user#index"
-  resources :donations, only: [:create]
+  resources :donations, only: [:create] do
+    collection do
+      get :user_ranking
+    end
+  end
+
   resources :disasters, only: [:index] do
     member do
       get :ranking

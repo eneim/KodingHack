@@ -18,6 +18,10 @@ class DonationsController < ApplicationController
     end
   end
 
+  def user_ranking
+    render json: Donation.user_ranking
+  end
+
   private
 
   def create_params
