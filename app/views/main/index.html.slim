@@ -1,43 +1,44 @@
-h2 Main
+.main-view
+  h2 Main
 
-#user-info.panel.panel-default
-  .panel-heading user information
-  .panel-body
-    pre
+  #user-info.panel.panel-default
+    .panel-heading user information
+    .panel-body
+      pre
 
-#ranking-info.panel.panel-default
-  .panel-heading user ranking infomation
-  .panel-body
-    pre
+  #ranking-info.panel.panel-default
+    .panel-heading user ranking infomation
+    .panel-body
+      pre
 
-button#donate data-original_id=1044579 donate
+  button#donate data-original_id=1044579 donate
 
-- content_for :post_js_include
-  javascript:
-    $(function() {
-      $.getJSON('/user', function(json) {
-        $('#user-info .panel-body pre').text(JSON.stringify(json, null, "    "))
-      });
+  - content_for :post_js_include
+    javascript:
+      $(function() {
+        $.getJSON('/user', function(json) {
+          $('#user-info .panel-body pre').text(JSON.stringify(json, null, "    "))
+        });
 
-      $.getJSON('/donations/user_ranking', function(json) {
-        $('#ranking-info .panel-body pre').text(JSON.stringify(json, null, "    "))
-      });
+        $.getJSON('/donations/user_ranking', function(json) {
+          $('#ranking-info .panel-body pre').text(JSON.stringify(json, null, "    "))
+        });
 
-      $('#donate').on('click', function() {
-        var $that = $(this);
-        var original_id = $that.data('original_id')
+        $('#donate').on('click', function() {
+          var $that = $(this);
+          var original_id = $that.data('original_id')
 
-        $.post('/donations', {
-          disaster: {
-            original_id: original_id,
-            title: 'title for disaster',
-            desc: 'desc for disaster'
-          },
-          amount: 1000000
-        }, function(ret) {
-          $.getJSON('/disasters/' + original_id + '/ranking', function(json) {
-            $('#ranking-info .panel-body pre').text(JSON.stringify(json, null, "    "))
+          $.post('/donations', {
+            disaster: {
+              original_id: original_id,
+              title: 'title for disaster',
+              desc: 'desc for disaster'
+            },
+            amount: 1000000
+          }, function(ret) {
+            $.getJSON('/disasters/' + original_id + '/ranking', function(json) {
+              $('#ranking-info .panel-body pre').text(JSON.stringify(json, null, "    "))
+            });
           });
         });
-      });
-    })
+      })
