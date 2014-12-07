@@ -1,5 +1,5 @@
 require 'rvm1/capistrano3'
-#require 'whenever/capistrano'
+require 'whenever/capistrano'
 
 lock '3.2.1'
 
