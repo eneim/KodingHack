@@ -3,6 +3,7 @@
 .logo{
 	margin-top:200px;
 }
+
 #title{
 	font-size: 25px;
 	color:#ffffff;
@@ -10,9 +11,16 @@
 	margin: 0;
 	padding: 0;
 }
-.top-content div{
+
+.top-content {
+	float: none;
+	margin: 0 auto;
+}
+
+.top-content div {
 	text-align: center;
 }
+
 .header-button{
 	background: #ffffff;
 	width: 400px;
@@ -23,10 +31,12 @@
 	padding-top: 15px;
 
 }
+
 .header-button{
 	margin: 0 auto;
 	background-color: #2E9DF7;
 }
+
 #login_facebook{
 	font-size: 20px;
 	color: white;
