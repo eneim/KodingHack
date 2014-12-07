@@ -1,0 +1,41 @@
+/** user list style */
+div.user_rank_list {
+
+}
+
+div.user_rank_list > ul {
+    list-style-type: none;
+    width: 100%;
+    padding-start: 0px;
+    -webkit-padding-start: 0px;
+    -moz-padding-start: 0px;
+}
+
+h3 {
+    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+div.user_rank_list > ul > li img {
+    float: left;
+    margin: 0 6px 0 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    background: no-repeat;
+}
+
+div.user_rank_list > ul > li p {
+    font: 200 12px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+div.user_rank_list > ul > li {
+    padding: 8px;
+    overflow: auto;
+}
+
+div.user_rank_list > ul > li:hover {
+    background: #6e5e65;
+    cursor: pointer;
+}
