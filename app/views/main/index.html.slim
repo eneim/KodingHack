@@ -6,7 +6,7 @@ h2 Main
     pre
 
 #ranking-info.panel.panel-default
-  .panel-heading ranking information for disaster[12345]
+  .panel-heading user ranking infomation
   .panel-body
     pre
 
@@ -17,7 +17,7 @@ javascript:
     $('#user-info .panel-body pre').text(JSON.stringify(json, null, "    "))
   });
 
-  $.getJSON('/disasters/12345/ranking', function(json) {
+  $.getJSON('/donations/user_ranking', function(json) {
     $('#ranking-info .panel-body pre').text(JSON.stringify(json, null, "    "))
   });
 
