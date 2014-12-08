@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Donathon - Become Charitable with this App.</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/styles.css" >
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body id="mainview">
+    <div class="wrapper">
+      <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar" style="position:fixed; right:0">
+            <ul class="nav">
+              <li>
+                <a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a>
+              </li>
+            </ul>
+            <div class="user_rank_list">
+              <ul id="lg-menu"></ul>
+            </div>
+            <div class="list-unstyled hidden-xs" id="sidebar-footer">
+                <a href="">Made By: Gundam Team</a>
+            </div>
+            <ul class="nav visible-xs" id="xs-menu">
+              <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+              <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
+              <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+              <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="column col-sm-10 col-xs-11">
+            <div id="map-title"><h1>The World's Crisis</h1></div>
+            <nav id="main-nav" class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">
+                    <img style="padding-bottom: 8px;" src="images/logo_donation.png" width="140" height="33">
+                  </a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav nav-filter">
+                    <li>
+                      <a href="#" data-subject='earthquake'><img src="images/icon_earthquake.png" width="20" height="20">Earthquake</a>
+                    </li>
+                    <li>
+                      <a href="#" data-subject='flood'><img src="images/icon_flood.png" width="20" height="20">Flood</a>
+                    </li>
+                    <li>
+                      <a href="#" data-subject='cyclone'><img src="images/icon_typhoon.png" width="20" height="20">Typhoon</a>
+                    </li>
+                    <li>
+                      <a href="#" data-subject='volcanoe'><img src="images/icon_volcano.png" width="20" height="20">Volcano</a>
+                    </li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/sign_out">Sign Out</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <div id="mapdiv">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="donateDialog" tabindex="-1" role="dialog" aria-labelledby="Donathon" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="donation-modal-label"></h4>
+        </div>
+        <div class="modal-body">
+          <%= form_tag '/donations', id: 'donation-form' do %>
+            <div class="form-group">
+              <label class="control-label" for="recipient-name">Amount:</label>
+              <input class="form-control" name="amount" type="number">
+            </div>
+            <input id="original_id" type="hidden" name="disaster[original_id]" />
+            <button type="submit" class="btn btn-block btn-danger" data-toggle="popover">Donate!</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	<!-- script references -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/ammap.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/continentsLow.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
+  <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+  <script src="js/searchButtonOnClick.js"></script>
+  <script type="text/javascript">
+    $.getJSON('/donations/user_ranking', function(json) {
+      $.each(json, function(i, data) {
+        fillSideBar(data.amount, data.image, data.name, data.url);
+      });
+    })
+
+    function fillSideBar(amount, image, name, url){
+      $("#lg-menu").append(
+        "<li><a href='"+url+"'><img src='"+image+"' />"+name+"<p> has donated "+amount+"USD</p></a></li>"
+      )
+    }
+
+    function mapResize(){
+      $("#mapdiv").css("height",function() {
+        return $(window).height() - $("#main-nav").height() - $('#map-title').height();
+      })
+    }
+
+    mapResize()
+    $(window).resize(mapResize);
+
+    $('#donateDialog').on('show.bs.modal', function(e) {
+      $that = $(this);
+      $that.find('#original_id').val($that.data('data').crisis_eventid);
+    });
+    $('#donation-form').on('')
+  </script>
+
+</body>
+</html>
