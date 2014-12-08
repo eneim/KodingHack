@@ -44,6 +44,7 @@
           </div>
 
           <div class="column col-sm-10 col-xs-11">
+            <div id="map-title"><h1>The World's Crisis</h1></div>
             <nav id="main-nav" class="navbar navbar-default" role="navigation">
               <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -136,7 +137,7 @@
 
     function mapResize(){
       $("#mapdiv").css("height",function() {
-        return $(window).height() - $("#main-nav").height();
+        return $(window).height() - $("#main-nav").height() - $('#map-title').height();
       })
     }
 

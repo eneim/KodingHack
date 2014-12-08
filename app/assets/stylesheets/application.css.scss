@@ -31,7 +31,18 @@ $color-facebook-hover: #8b9dc3;
       width:      100%;
       height:     100%;
   }
+
+  #map-title {
+    h1 {
+      color: white;
+      font-size: 18pt;
+      text-align: center;
+      padding: 10px 0;
+      margin: 0;
+    }
+  }
 }
+
 
 .btn-facebook {
   @include button-variant(#fff, $color-facebook, $color-facebook);

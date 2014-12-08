@@ -57,7 +57,6 @@ var map = AmCharts.makeChart("mapdiv", {
         rollOverColor: "#9a7bca"
     },
 
-
     dataProvider: {
     map: "worldLow",
     getAreasFromMap: true,
