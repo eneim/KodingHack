@@ -1,6 +1,7 @@
 # Donathon - The Worldwide Donation Application
 
 A place where everyone can be more charitable, and help places where natural disasters occurred from your city.
+Visit http://tmiyamon.koding.io/.
 
 Made by [Team Gundam](https://github.com/jumpeiymn/global.hackathon/blob/master/Teams/Gundam/ABOUT.md).
 
@@ -26,4 +27,4 @@ Provides crisis information in realtime.
 Facebook graph api.
 
 - http://www.amcharts.com/
-Bueatiful and usuful map api.
+Beautiful and useful map api.
