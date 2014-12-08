@@ -124,13 +124,13 @@
   <script type="text/javascript">
     $.getJSON('/donations/user_ranking', function(json) {
       $.each(json, function(i, data) {
-        fillSideBar(data.amount, data.image, data.name);
+        fillSideBar(data.amount, data.image, data.name, data.url);
       });
     })
 
-    function fillSideBar(amount, image, name){
+    function fillSideBar(amount, image, name, url){
       $("#lg-menu").append(
-        "<li><a href='http://ene.im'><img src='"+image+"' />"+name+"<p> has donated "+amount+"USD</p></a></li>"
+        "<li><a href='"+url+"'><img src='"+image+"' />"+name+"<p> has donated "+amount+"USD</p></a></li>"
       )
     }
 

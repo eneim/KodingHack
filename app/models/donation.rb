@@ -7,7 +7,8 @@ class Donation < ActiveRecord::Base
       {
         name: user.name,
         image: user.image,
-        amount: amount
+        amount: amount,
+        url: user.url
       }
     end
   end

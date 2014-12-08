@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
       user.name = auth.info.name   # assuming the user model has a name
       user.image = auth.info.image # assuming the user model has an image
       user.city = find_or_create_city_from(city_id, token) if city_id.present?
+      user.url = auth.info.urls.Facebook rescue ''
     end
   end
 
